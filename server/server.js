@@ -11,7 +11,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: true,
+  origin: "https://front-mmnc.onrender.com",
+  credentials: true,
+}));
+
+app.options(/.*/, cors({
+  origin: "https://front-mmnc.onrender.com",
   credentials: true,
 }));
 
