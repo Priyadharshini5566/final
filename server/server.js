@@ -10,13 +10,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://final-2-ke5o.onrender.com"
-  ],
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/api/health", (req, res) => res.json({ status: "ok", service: "Peer Project Hub API" }));
