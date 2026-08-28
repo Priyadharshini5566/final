@@ -20,7 +20,7 @@ app.options(/.*/, cors({
   credentials: true,
 }));
 
-app.options(/.*/, cors());
+
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/api/health", (req, res) => res.json({ status: "ok", service: "Peer Project Hub API" }));
